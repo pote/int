@@ -1,4 +1,4 @@
-# int - tiny internationalization.
+# int - (some) internationalization.
 
 This is a minimal in-browser internationalization solution: if you are doing a static page this might be what you need to support multiple languages, if you simply dislike yaml files and more complicated solutions feel free to try it, but keep in mind this is a 40~ LOC, immature solution.
 
