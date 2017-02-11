@@ -34,7 +34,7 @@ You'll need to use the `lang` attribute in all elements you want to internationa
   A long time ago in a galaxy far, far away...
 </p>
 
-<p lang="en">
+<p lang="es">
   Hace mucho tiempo en una galaxia muy, muy lejana...
 </p>
 ```
