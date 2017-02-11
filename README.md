@@ -25,6 +25,14 @@ Right after that, you'll want to initialize it:
 </script>
 ```
 
+If you want to, you can attempt to load the user's desired language at this time as well.
+
+```JavaScript
+int.toggle(navigator.language);
+```
+
+`toggle` will simply ignore locales not present in `available_locales`.
+
 ### Markup
 
 You'll need to use the `lang` attribute in all elements you want to internationalize, like so:
