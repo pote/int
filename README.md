@@ -1,12 +1,11 @@
 # int - (some) internationalization.
 
-This is a minimal in-browser internationalization solution: if you are doing a static page this might be what you need to support multiple languages, if you simply dislike yaml files and more complicated solutions feel free to try it, but keep in mind this is a 40~ LOC, immature solution.
+This is a minimal in-browser internationalization solution: if you are doing a static page this might be what you need to support multiple languages, although it can easily be used in more complex setups.
 
 
-## Usage
+# Usage
 
-
-### Require and initialization
+## Require and initialization
 
 Since it will govern what text to display it's a good idea to require `int` as soon as possible, I recommend doing it in your `<head>` element.
 
@@ -25,7 +24,7 @@ Right after that, you'll want to initialize it:
 </script>
 ```
 
-### Markup
+## Markup
 
 You'll need to use the `lang` attribute in all elements you want to internationalize, like so:
 
@@ -41,7 +40,7 @@ You'll need to use the `lang` attribute in all elements you want to internationa
 
 In the above markup, only the element with the `lang` attribute matching the current `int.locale` will be displayed.
 
-### Switching languages
+## Switching languages
 
 You can toggle available locales easily:
 
@@ -61,7 +60,7 @@ int.toggle(navigator.language);
 `#toggle` will simply ignore locales not present in `available_locales`.
 
 
-### Language Picker
+## Language Picker
 
 So you can create a language picker of your choice just as easily:
 
@@ -70,8 +69,18 @@ So you can create a language picker of your choice just as easily:
 <a href="#" onclick="int.toggle('es')">Español</a>
 ```
 
+## Styling, left-to-right text, etc.
+
+Int is a very tiny solution and doesn't include custom language display styles, however, by using the standard html `lang` property it gives you the ability to style individual languages easily. For example: if you want Arabic to be displayed with its proper left-to-right style, simply add this to your CSS:
+
+```css
+:lang(ar) {
+  direction: ltr;
+}
+```
+
 ## That's it.
 
-Int is a toy project, while I intend to use and older versions of it are in production in a few sites you must keep in mind that the targeted usecase is simple static sites hosted in places like github pages.
+Int is (for now) an immature project, it is running in production in a few sites but you must keep in mind that the main usecase is simple static sites hosted in places like github pages:
 
 It might not be your cup-of-tea, it might not solve your use case, that's okay: `Int` won't attempt to solve internationalization for everyone, instead it will attempt to solve it elegantly for some people, there are plenty of other solutions out there already :).
