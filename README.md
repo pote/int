@@ -69,13 +69,13 @@ So you can create a language picker of your choice just as easily:
 <a href="#" onclick="int.toggle('es')">Español</a>
 ```
 
-## Styling, left-to-right text, etc.
+## Styling, right-to-left text, etc.
 
-Int is a very tiny solution and doesn't include custom language display styles, however, by using the standard html `lang` property it gives you the ability to style individual languages easily. For example: if you want Arabic to be displayed with its proper left-to-right style, simply add this to your CSS:
+Int is a very tiny solution and doesn't include custom language display styles, however, by using the standard html `lang` property it gives you the ability to style individual languages easily. For example: if you want Arabic to be displayed with its proper right-to-left style, simply add this to your CSS:
 
 ```css
 :lang(ar) {
-  direction: ltr;
+  direction: rtl;
 }
 ```
 
