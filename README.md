@@ -51,15 +51,6 @@ int.toggle('es');
 `#toggle` saves the locale you're selecting to `localStorage`, so the appropriate language will be loaded on page reloads.
 
 
-If you want to, you can attempt to load the user's desired language as well.
-
-```JavaScript
-int.toggle(navigator.language);
-```
-
-`#toggle` will simply ignore locales not present in `available_locales`.
-
-
 ## Language Picker
 
 So you can create a language picker of your choice just as easily:
