@@ -69,6 +69,37 @@ So you can create a language picker of your choice just as easily:
 <a href="#" onclick="int.toggle('es')">Español</a>
 ```
 
+## Detect user's language
+
+The `detect` option is set to `false` by default, but if enabled, it will attempt to toggle the user's browser `navigator.language` automatically on load, unless that user has explicitly toggled a preferred language before.
+
+```html
+<script>
+  int = new Int({
+    default_locale: 'en',
+    available_locales: ['en', 'es'],
+    detect: true
+  });
+</script>
+```
+
+## Strict mode vs lax matching
+
+When using `detect: true` you might not want to make a difference between, say, `en-US` and `en-UK`, as that would mean writing a ton of repetitive language elements.
+
+However, if you set the `strict` option to `false` in the constructor then Int will only pay attention to the first two characters of the user's preferred language, so any `en-*` in `navigator.language` will match your `en` elements.
+
+```html
+<script>
+  int = new Int({
+    default_locale: 'en',
+    available_locales: ['en', 'es'],
+    detect: true,
+    strict: false
+  });
+</script>
+```
+
 ## Styling, right-to-left text, etc.
 
 Int is a very tiny solution and doesn't include custom language display styles, however, by using the standard html `lang` property it gives you the ability to style individual languages easily. For example: if you want Arabic to be displayed with its proper right-to-left style, simply add this to your CSS:
